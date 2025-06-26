@@ -1,5 +1,6 @@
 "use client";
-import CustomButton from "@/Component/CustomButton/CustomButton";
+import CustomButton from "@/component/CustomButton/CustomButton";
+import Footer from "@/component/Footer/Footer";
 // import Image from "next/image";
 // import styles from "./page.module.css";
 import {  Flex, Title } from "@mantine/core";
@@ -22,11 +23,12 @@ export default function Home() {
         </Flex>
       </Flex>
 
-      <Flex bottom={0} justify={"center"} p={50}>
+      {/* <Flex bottom={0} justify={"center"} p={50}>
         <Title style={{ fontSize: "80px" }}>
           This project is currently under development. 🚧
         </Title>
-      </Flex>
+      </Flex> */}
+      <Footer/>
     </Flex>
     // </Flex>
   );
