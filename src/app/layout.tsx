@@ -5,7 +5,8 @@ import { MantineProvider, Flex, mantineHtmlProps } from "@mantine/core";
 import { AppProps } from "next/app";
 import "@mantine/core/styles.css";
 import { PropsWithChildren } from "react";
-// import { theme } from "@/config/theme";
+import { theme } from "@/config/theme";
+import TestProvider from "@/Component/TestProvider/TestProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,9 +32,12 @@ export default function RootLayout({ children }: IRootLayout) {
   return (
     <html lang="en" {...mantineHtmlProps}>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <MantineProvider defaultColorScheme="dark">
-          <Flex style={{ flex: 1, height: "100vh" }}>{children}</Flex>
-        </MantineProvider>
+        {/* <TestProvider> */}
+        
+          <MantineProvider defaultColorScheme="dark">
+            <Flex style={{ flex: 1, height: "100vh" }}>{children}</Flex>
+          </MantineProvider>
+        {/* </TestProvider> */}
       </body>
     </html>
   );

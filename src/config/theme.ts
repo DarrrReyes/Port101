@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import {  createTheme, Text  } from "@mantine/core";
 import { Zain } from "next/font/google";
 
