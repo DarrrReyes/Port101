@@ -3,8 +3,9 @@ import React from "react";
 
 interface CustomButtonProps extends ButtonProps {
   label: string;
+  onClick: () => void;
 }
-const CustomButton = ({ label, ...props }: CustomButtonProps) => {
+const CustomButton = ({ label, onClick, ...props }: CustomButtonProps) => {
   return (
     <Button
       variant="outline"
@@ -12,8 +13,9 @@ const CustomButton = ({ label, ...props }: CustomButtonProps) => {
         height: "40px",
         width: "130px",
       }}
-    //   color="green"
+      //   color="green"
       {...props}
+      onClick={onClick}
     >
       {label}
     </Button>

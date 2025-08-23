@@ -25,6 +25,7 @@
     "@tiptap/react": "^2.22.3",
     "@tiptap/starter-kit": "^2.22.3",
     "embla-carousel": "^8.5.2",
+    "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.5.2",
     "next": "15.3.4",
     "react": "^19.0.0",

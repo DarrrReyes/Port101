@@ -3,6 +3,72 @@
   --foreground: #171717;
 }
 
+
+/* NAVBAR BUTTON */
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+}
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #74021e;
+  transition: transform 0.25s ease-out;
+}
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+}
+.hover-underline-animation.left::after {
+  transform-origin: bottom right;
+}
+.hover-underline-animation.left:hover::after {
+  transform-origin: bottom left;
+}
+
+
+.slider {
+  background: white;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 960px;
+}
+
+.slide-track {
+  display: flex;
+  width: calc(250px * 14);
+}
+
+.slide {
+  height: 100px;
+  width: 180px;
+}
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-250px * 7)); }
+}
+@keyframes scroll-right {
+  0% { transform: translateX(calc(-250px * 7)); }
+  100% { transform: translateX(0); }
+}
+
+.slide-track.left {
+  animation: scroll-left 40s linear infinite;
+}
+
+.slide-track.right {
+  animation: scroll-right 40s linear infinite;
+}
+
+
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;

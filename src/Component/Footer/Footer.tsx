@@ -5,7 +5,7 @@ import { IconMail, IconMapPinFilled, IconPhone } from "@tabler/icons-react";
 
 const Footer = () => {
   return (
-    <Flex p={50} bottom={0} justify={"space-around"} >
+    <Flex p={50} bottom={0} justify={"space-between"} >
       <Flex direction={"column"} gap={10}>
         <Flex align={"center"} gap={5}>
           <IconMapPinFilled />
@@ -21,7 +21,7 @@ const Footer = () => {
         </Flex>
       </Flex>
 
-      <Flex  justify={"center"} >
+      <Flex  justify={"center"} align={'center'}>
         <Title style={{ fontSize: "20px" }}>
           This project is currently under development. 🚧
         </Title>
