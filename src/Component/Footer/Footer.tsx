@@ -2,14 +2,15 @@
 import { Flex, Text, Title } from "@mantine/core";
 import React from "react";
 import { IconMail, IconMapPinFilled, IconPhone } from "@tabler/icons-react";
+import Contact from "../Contact/Contact";
 
 const Footer = () => {
   return (
-    <Flex p={50} bottom={0} justify={"space-between"} >
+    <Flex p={50} bottom={0} justify={"space-between"}>
       <Flex direction={"column"} gap={10}>
         <Flex align={"center"} gap={5}>
           <IconMapPinFilled />
-          <Text >Marilao, Bulacan, Philippines</Text>
+          <Text>Marilao, Bulacan, Philippines</Text>
         </Flex>
         <Flex align={"center"} gap={5}>
           <IconPhone />
@@ -21,10 +22,17 @@ const Footer = () => {
         </Flex>
       </Flex>
 
-      <Flex  justify={"center"} align={'center'}>
+      <Flex justify={"center"} align={"center"}>
         <Title style={{ fontSize: "20px" }}>
           This project is currently under development. 🚧
         </Title>
+
+        {/* <Contact
+          onMainClick={() => {}}
+          onGithubClick={() => {}}
+          onInstagramClick={() => {}}
+          onLinkedInClick={() => {}}
+        /> */}
       </Flex>
     </Flex>
   );

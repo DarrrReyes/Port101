@@ -13,19 +13,40 @@ const page = () => {
         direction={"column"}
         align={"center"}
         justify={"center"}
-        style={{ height: "550px" }}
+        style={{ height: "400px" }}
       >
         <Text>About</Text>
         <Text>I&apos;m a developer</Text>
       </Flex>
 
       {/*2ND column */}
+
       <Flex
+        bg={"blue"}
+        direction={"row"}
+        align={"center"}
+        justify={"space-around"}
+        style={{ height: "500px" }}
+      >
+        <Flex direction={"column"} justify={"center"} align={"center"} p={10}>
+          <Text>My Exp</Text>
+        </Flex>
+
+        <Flex direction={"column"} justify={"center"} align={"center"} p={10}>
+          <Text>My Image??</Text>
+        </Flex>
+      </Flex>
+
+      {/*3RD column */}
+      <Flex
+        bg={"pink"}
         direction={"row"}
         align={"center"}
         justify={"center"}
         style={{ height: "500px", width: "100%" }}
       >
+
+        {/* SOMETHING ABOUT ME */}
         <Flex
           direction={"column"}
           align={"center"}
@@ -36,7 +57,7 @@ const page = () => {
           <Text
             size="lg"
             lineClamp={6}
-            style={{ padding: "10px 70px",textAlign: 'center' }}
+            style={{ padding: "10px 70px", textAlign: "center" }}
           >
             I’m a Software Developer driven by curiosity and a passion for
             creating interactive web experiences. I’m focused on sharpening my
@@ -45,8 +66,16 @@ const page = () => {
             what I love and give my best in every project.
           </Text>
         </Flex>
-        <Flex align={"center"} justify={"center"} w={"50%"} direction={'row'} m={50}>
-          <AutoPlayCarousel/>
+
+        {/* SKILL */}
+        <Flex
+          align={"center"}
+          justify={"center"}
+          w={"50%"}
+          direction={"row"}
+          m={50}
+        >
+          <AutoPlayCarousel />
         </Flex>
       </Flex>
 
