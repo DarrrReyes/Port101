@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <Flex
       justify={"space-between"}
-      style={{ backgroundColor: "white", padding: "5px 16px" }}
+      style={{ backgroundColor: "transparent", padding: "5px 16px" }}
     >
       <Flex align={"center"}>
         <Title style={{ fontSize: "32px" }}>Port101</Title>
@@ -37,7 +37,7 @@ const Navbar = () => {
             fontSize: "19px",
             fontWeight: "bolder",
           }}
-            onClick={() => {
+          onClick={() => {
             router.push("/Project");
           }}
         >

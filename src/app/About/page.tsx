@@ -1,10 +1,26 @@
+"use client";
 import Footer from "@/component/Footer/Footer";
 import Navbar from "@/component/Navbar/Navbar";
 import AutoPlayCarousel from "@/component/Sample/Sample";
+import { Timeline, TimelineItemData } from "@/Component/Timeline/TimeLine";
 import { Flex, Text } from "@mantine/core";
 import React from "react";
 
 const page = () => {
+  const experienceData: TimelineItemData[] = [
+    {
+      period: "2023 - Current",
+      title: "Full-Stack Developer",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    },
+    {
+      period: "2018 - 2022",
+      title: "Full-Stack Developer",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    },
+  ];
   return (
     <Flex direction={"column"} flex={1}>
       {/*1ST column */}
@@ -13,39 +29,65 @@ const page = () => {
         direction={"column"}
         align={"center"}
         justify={"center"}
-        style={{ height: "400px" }}
+        style={{
+          height: "400px",
+          backgroundImage: "url('/homeBg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
       >
-        <Text>About</Text>
-        <Text>I&apos;m a developer</Text>
+        <Flex
+          direction={"column"}
+          align={"center"}
+          justify={"center"}
+          style={{
+            backdropFilter: "blur(6px)", // 👈 blurs what's behind
+            WebkitBackdropFilter: "blur(3px)", // Safari
+            flex: 1,
+          }}
+        >
+          <Text>About</Text>
+          <Text>I&apos;m a developer</Text>
+        </Flex>
       </Flex>
 
       {/*2ND column */}
-
       <Flex
-        bg={"blue"}
         direction={"row"}
         align={"center"}
-        justify={"space-around"}
-        style={{ height: "500px" }}
+        // justify={"space-between"}
+        style={{ height: "500px", padding: "0px 30px", width: "100%" }}
       >
-        <Flex direction={"column"} justify={"center"} align={"center"} p={10}>
-          <Text>My Exp</Text>
+        <Flex
+          direction={"column"}
+          justify={"center"}
+          align={"center"}
+          p={20}
+          w={"50%"}
+        >
+          <Timeline title="EXPERIENCE" items={experienceData} />
         </Flex>
 
-        <Flex direction={"column"} justify={"center"} align={"center"} p={10}>
+        <Flex
+          direction={"column"}
+          justify={"center"}
+          align={"center"}
+          p={10}
+          w={"50%"}
+        >
           <Text>My Image??</Text>
         </Flex>
       </Flex>
 
       {/*3RD column */}
       <Flex
-        bg={"pink"}
+        bg={"white"}
         direction={"row"}
         align={"center"}
         justify={"center"}
         style={{ height: "500px", width: "100%" }}
       >
-
         {/* SOMETHING ABOUT ME */}
         <Flex
           direction={"column"}
@@ -79,7 +121,7 @@ const page = () => {
         </Flex>
       </Flex>
 
-      {/*3RD column */}
+      {/*4TH column */}
       <Flex direction={"column"} justify={"center"} bottom={0}>
         <Footer />
       </Flex>

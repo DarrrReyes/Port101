@@ -1,4 +1,3 @@
-"use client";
 import { Flex, Text, Title } from "@mantine/core";
 import React from "react";
 import { IconMail, IconMapPinFilled, IconPhone } from "@tabler/icons-react";
@@ -23,16 +22,16 @@ const Footer = () => {
       </Flex>
 
       <Flex justify={"center"} align={"center"}>
-        <Title style={{ fontSize: "20px" }}>
+        {/* <Title style={{ fontSize: "20px" }}>
           This project is currently under development. 🚧
-        </Title>
+        </Title> */}
 
-        {/* <Contact
+        <Contact
           onMainClick={() => {}}
           onGithubClick={() => {}}
           onInstagramClick={() => {}}
           onLinkedInClick={() => {}}
-        /> */}
+        />
       </Flex>
     </Flex>
   );
