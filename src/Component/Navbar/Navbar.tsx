@@ -1,64 +1,92 @@
 "use client";
-import { Button, Flex, Title } from "@mantine/core";
+import { Flex, Title, Button, Burger, Drawer, Stack } from "@mantine/core";
+import { useMediaQuery, useDisclosure } from "@mantine/hooks";
 import { useRouter } from "next/navigation";
-import React from "react";
 
 const Navbar = () => {
   const router = useRouter();
-  return (
-    <Flex
-      justify={"space-between"}
-      style={{ backgroundColor: "transparent", padding: "5px 16px" }}
-    >
-      <Flex align={"center"}>
-        <Title style={{ fontSize: "32px" }}>Port101</Title>
-      </Flex>
-      <Flex justify={"end"} align={"center"}>
-        <Button
-          className="hover-underline-animation left"
-          style={{
-            backgroundColor: "transparent",
-            color: "#c23659ff",
-            fontSize: "19px",
-            fontWeight: "bolder",
-          }}
-          onClick={() => {
-            router.push("/");
-          }}
-        >
-          Home
-        </Button>
+  const isMobile = useMediaQuery("(max-width: 768px)");
+  const [opened, { toggle, close }] = useDisclosure(false);
 
-        <Button
-          className="hover-underline-animation left"
-          style={{
-            backgroundColor: "transparent",
-            color: "#c23659ff",
-            fontSize: "19px",
-            fontWeight: "bolder",
-          }}
-          onClick={() => {
-            router.push("/Project");
-          }}
-        >
-          Project
-        </Button>
-        <Button
-          className="hover-underline-animation left"
-          style={{
-            backgroundColor: "transparent",
-            color: "#c23659ff",
-            fontSize: "19px",
-            fontWeight: "bolder",
-          }}
-          onClick={() => {
-            router.push("/About");
-          }}
-        >
-          About
-        </Button>
+  const navigate = (path: string) => {
+    router.push(path);
+    close();
+  };
+
+  return (
+    <>
+      <Flex
+        justify="space-between"
+        align="center"
+        px="md"
+        py="xs"
+        bg="transparent"
+      >
+        {/* Logo */}
+        <Title order={2} fz={isMobile ? 24 : 32}>
+          Port101
+        </Title>
+
+        {/* Desktop Menu */}
+        {!isMobile && (
+          <Flex gap="md">
+            <Button
+              variant="subtle"
+              c="#c23659ff"
+              fw={700}
+              fz={19}
+              onClick={() => router.push("/")}
+            >
+              Home
+            </Button>
+
+            <Button
+              variant="subtle"
+              c="#c23659ff"
+              fw={700}
+              fz={19}
+              onClick={() => router.push("/Project")}
+            >
+              Project
+            </Button>
+
+            <Button
+              variant="subtle"
+              c="#c23659ff"
+              fw={700}
+              fz={19}
+              onClick={() => router.push("/About")}
+            >
+              About
+            </Button>
+          </Flex>
+        )}
+
+        {/* Mobile Burger */}
+        {isMobile && <Burger opened={opened} onClick={toggle} size="sm" />}
       </Flex>
-    </Flex>
+
+      {/* Mobile Drawer */}
+      <Drawer
+        opened={opened}
+        onClose={close}
+        title="Menu"
+        padding="md"
+        size="70%"
+      >
+        <Stack>
+          <Button variant="subtle" onClick={() => navigate("/")}>
+            Home
+          </Button>
+          <Button variant="subtle" onClick={() => navigate("/Project")}>
+            Project
+          </Button>
+          <Button variant="subtle" onClick={() => navigate("/About")}>
+            About
+          </Button>
+        </Stack>
+      </Drawer>
+    </>
   );
 };
 

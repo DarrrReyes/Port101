@@ -32,9 +32,7 @@ export default function RootLayout({ children }: IRootLayout) {
   return (
     <html lang="en" {...mantineHtmlProps}>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <MantineProvider defaultColorScheme="dark">
-          <Flex style={{ flex: 1 }}>{children}</Flex>
-        </MantineProvider>
+        <MantineProvider defaultColorScheme="dark">{children}</MantineProvider>
       </body>
     </html>
   );

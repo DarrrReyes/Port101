@@ -1,3 +1,4 @@
+'use client'
 import { ActionIcon, Button, Flex, Stack, Title } from "@mantine/core";
 import React from "react";
 import CustomButton from "../CustomButton/CustomButton";

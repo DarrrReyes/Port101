@@ -25,7 +25,7 @@ const page = () => {
     <Flex direction={"column"} flex={1}>
       {/*1ST column */}
       <Navbar />
-      <Flex
+      {/* <Flex
         direction={"column"}
         align={"center"}
         justify={"center"}
@@ -124,7 +124,7 @@ const page = () => {
       {/*4TH column */}
       <Flex direction={"column"} justify={"center"} bottom={0}>
         <Footer />
-      </Flex>
+      </Flex> */}
     </Flex>
   );
 };
